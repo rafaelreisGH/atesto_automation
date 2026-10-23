@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyInstaller / Build
+build/
+dist/
+*.spec
+
+# Modelos do Word com dados institucionais
+modelo_atesto.docx
+modelo_relatorio.docx
+dist/modelo_atesto.docx
+dist/modelo_relatorio.docx
+*.docx
+
+# Pastas e arquivos gerados pela aplicação
+[0-9][0-9][0-9][0-9]/
+Docs_*/
+*.pdf
+
+# Arquivos de ambiente e logs
+.env
+*.log
+
+# Metadados e IDEs
+.agents/
+.vscode/
+.idea/
+*.swp
+*.swo
