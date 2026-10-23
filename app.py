@@ -268,17 +268,30 @@ class AppAutomacaoAtesto(ctk.CTk):
 
         diretorio_base = obter_diretorio_base()
 
-        # Validação da existência dos modelos originais
+        # Resolução inteligente dos modelos (usa o modelo oficial ou o modelo de exemplo)
         caminho_modelo_atesto = os.path.join(diretorio_base, "modelo_atesto.docx")
-        caminho_modelo_relatorio = os.path.join(diretorio_base, "modelo_relatorio.docx")
-
         if not os.path.exists(caminho_modelo_atesto):
-            messagebox.showerror("Modelo Ausente", f"Não foi encontrado o arquivo:\n{caminho_modelo_atesto}\nCertifique-se de que ele está na mesma pasta do programa.")
-            return
+            caminho_exemplo_atesto = os.path.join(diretorio_base, "modelo_atesto.example.docx")
+            if os.path.exists(caminho_exemplo_atesto):
+                caminho_modelo_atesto = caminho_exemplo_atesto
+            else:
+                messagebox.showerror(
+                    "Modelo Ausente",
+                    f"Não foi encontrado 'modelo_atesto.docx' nem 'modelo_atesto.example.docx' em:\n{diretorio_base}"
+                )
+                return
 
+        caminho_modelo_relatorio = os.path.join(diretorio_base, "modelo_relatorio.docx")
         if not os.path.exists(caminho_modelo_relatorio):
-            messagebox.showerror("Modelo Ausente", f"Não foi encontrado o arquivo:\n{caminho_modelo_relatorio}\nCertifique-se de que ele está na mesma pasta do programa.")
-            return
+            caminho_exemplo_relatorio = os.path.join(diretorio_base, "modelo_relatorio.example.docx")
+            if os.path.exists(caminho_exemplo_relatorio):
+                caminho_modelo_relatorio = caminho_exemplo_relatorio
+            else:
+                messagebox.showerror(
+                    "Modelo Ausente",
+                    f"Não foi encontrado 'modelo_relatorio.docx' nem 'modelo_relatorio.example.docx' em:\n{diretorio_base}"
+                )
+                return
 
         # 1. Tratamento da data para atender ao padrão de nomes de arquivos do Windows
         # Substitui barras '/' por '_'

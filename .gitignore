@@ -15,12 +15,15 @@ build/
 dist/
 *.spec
 
-# Modelos do Word com dados institucionais
+# Modelos do Word com dados institucionais (ignora os modelos reais)
 modelo_atesto.docx
 modelo_relatorio.docx
 dist/modelo_atesto.docx
 dist/modelo_relatorio.docx
 *.docx
+
+# Permite explicitamente os modelos de exemplo públicos
+!*.example.docx
 
 # Pastas e arquivos gerados pela aplicação
 [0-9][0-9][0-9][0-9]/

@@ -41,8 +41,9 @@ This application provides a modern graphical desktop interface (GUI) built with 
    ```bash
    pip install -r requirements.txt
    ```
-3. **Set up templates:**
-   - Place your custom templates `modelo_atesto.docx` and `modelo_relatorio.docx` in the root folder containing the required tags (`{{FATURA}}`, `{{PERIODO}}`, `{{DATA}}`, `{{VALOR}}`).
+3. **Templates ready to use:**
+   - The repository includes pre-configured sample templates: `modelo_atesto.example.docx` and `modelo_relatorio.example.docx`.
+   - The application automatically uses them if present, or you can supply your own `modelo_atesto.docx` and `modelo_relatorio.docx`.
 4. **Run application:**
    ```bash
    python app.py
@@ -80,8 +81,9 @@ Esta aplicação desktop com interface visual moderna (**CustomTkinter**) automa
    ```bash
    pip install -r requirements.txt
    ```
-2. **Configurar os modelos:**
-   - Adicione seus modelos `modelo_atesto.docx` e `modelo_relatorio.docx` na raiz do projeto com as chaves desejadas (`{{FATURA}}`, `{{PERIODO}}`, `{{DATA}}`, `{{VALOR}}`).
+2. **Modelos de exemplo inclusos e prontos para teste:**
+   - O projeto já acompanha os modelos de teste descaracterizados: `modelo_atesto.example.docx` e `modelo_relatorio.example.docx`.
+   - A aplicação os reconhece automaticamente de imediato, ou você pode fornecer seus próprios `modelo_atesto.docx` e `modelo_relatorio.docx`.
 3. **Executar em desenvolvimento:**
    ```bash
    python app.py
